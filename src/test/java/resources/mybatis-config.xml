@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!--  <settings>-->
+<!--    <setting name="lazyLoadingEnabled" value="true"/>-->
+<!--    &lt;!&ndash; <setting name="aggressiveLazyLoading" value="false"/> &ndash;&gt;-->
+<!--  </settings>-->
+  <typeAliases>
+    <typeAlias alias="area" type="pers.cbshu.demo.po.CnArea2019"/>
+  </typeAliases>
+<!--  <typeHandlers>-->
+<!--    <typeHandler jdbcType="VARCHAR" javaType="string" handler="pers.cbshu.demo.handler.MyStringHandler"/>-->
+<!--  </typeHandlers>-->
+  <!-- 定义数据库的信息，默认使用development数据库构建环境 -->
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/demo_db"/>
+        <property name="username" value="demo_user"/>
+        <property name="password" value="demo_pwd"/>
+      </dataSource>
+    </environment>
+  </environments>
+  <!-- 定义映射器 -->
+  <mappers>
+    <package name="pers.cbshu.demo.mapper"/>
+  </mappers>
+</configuration>

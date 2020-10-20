@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="pers.cbshu.demo.mapper.CnArea2019Mapper">
+  <resultMap id="BaseResultMap" type="pers.cbshu.demo.po.CnArea2019">
+    <id column="id" property="id" />
+    <result property="level" column="level" />
+    <result property="parentCode" column="parent_code" />
+    <result property="areaCode" column="area_code" />
+    <result property="zipCode" column="zip_code" />
+    <result property="cityCode" column="city_code" />
+    <result property="name" column="name" />
+    <result property="shortName" column="short_name" />
+    <result property="mergerName" column="merger_name" />
+    <result property="pinyin" column="pinyin" />
+    <result property="lng" column="lng" />
+    <result property="lat" column="lat" />
+  </resultMap>
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap">
+    select * from cnarea_2019 where id= #{id, jdbcType=INTEGER}
+  </select>
+</mapper>
